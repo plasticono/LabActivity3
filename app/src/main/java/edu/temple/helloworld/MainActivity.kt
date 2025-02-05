@@ -20,6 +20,10 @@ class MainActivity : AppCompatActivity() {
 
         
         findViewById<Button>(R.id.clickMeButton).setOnClickListener {
+            if(findViewById<EditText>(R.id.nameEditText).text.length == 0){
+                displayTextView.text = "Hi! Don't you have a name?"
+                return@setOnClickListener
+            }
             displayTextView.text = "Hello, ${findViewById<EditText>(R.id.nameEditText).text}"
         }
 
